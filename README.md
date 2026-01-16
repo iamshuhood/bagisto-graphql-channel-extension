@@ -11,7 +11,9 @@
 
 ---
 
-## 🚀 Installation (One Command!)
+## 🚀 Fresh Bagisto Installation
+
+### Just run ONE command from your Bagisto directory:
 
 ```bash
 cd /path/to/your/bagisto
@@ -20,22 +22,32 @@ chmod +x install-plugin.sh
 ./install-plugin.sh
 ```
 
-**Done!** No config editing needed. Works on any server, any Bagisto installation.
+**That's it!** The script does EVERYTHING:
+- ✅ Clones plugin from GitHub
+- ✅ Installs via composer
+- ✅ Copies the vendor file automatically
+- ✅ Clears caches
+- ✅ Verifies installation
+
+**No manual steps needed!** Works on any server, any fresh Bagisto.
 
 ---
 
-## 🔄 After Bagisto Update
+## 🔄 After Bagisto Update (Already Installed)
 
-When you update Bagisto, just copy one file back:
+**Only when you update Bagisto**, copy one file back:
 
 ```bash
 composer update bagisto/bagisto
+
+# Copy the file (only needed after updates!)
 cp packages/Webkul/GraphQLChannelExtension/src/graphql/channel.graphql \
    vendor/bagisto/graphql-api/src/graphql/shop/common/
-php artisan cache:clear && php artisan config:clear && php artisan lighthouse:clear-cache
+
+php artisan cache:clear && php artisan lighthouse:clear-cache
 ```
 
-**That's it!** Your plugin keeps working.
+**Note:** You only do this AFTER updates. Fresh install does it automatically!
 
 ---
 
