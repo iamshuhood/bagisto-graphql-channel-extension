@@ -1,0 +1,10 @@
+extend type Query {
+    channelByCode(code: String!): Channel
+        @field(resolver: "Webkul\\GraphQLChannelExtension\\Queries\\Shop\\Common\\ChannelQuery@channelByCode")
+    
+    channelByHostname(hostname: String!): Channel
+        @field(resolver: "Webkul\\GraphQLChannelExtension\\Queries\\Shop\\Common\\ChannelQuery@channelByHostname")
+    
+    currentChannel: Channel
+        @field(resolver: "Webkul\\GraphQLChannelExtension\\Queries\\Shop\\Common\\ChannelQuery@currentChannel")
+}
